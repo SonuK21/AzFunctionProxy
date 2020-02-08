@@ -1,0 +1,27 @@
+<div class="text-center bg-light mb-0">
+  <h1>Azure Function Todo API</h1>
+</div>
+<div id="app" class="container">
+  <div class="row mb-2">
+      <input type="text" class="form-control" placeholder="Add Todo" #taskDes (keyup.enter)="addTodo(taskDes.value); taskDes.value='';">
+  </div>
+  <div class="row" *ngFor="let todo of todoList">
+      <div class="form-check mb-2 mr-sm-2 col-sm-3">
+          <label class="form-check-label col-sm">
+              <input class="form-check-input" v-model="todo.isCompleted" type="checkbox">
+              <span v-bind:class="{ completed: todo.isCompleted }">{{todo.taskDescription}}</span>
+          </label>
+      </div>
+      <div class="col-sm-3">
+        <a (click)="deleteTodo(todo.id)"><i class="fa fa-trash"></i></a>
+      </div>
+  </div>
+  <div class="row" *ngIf="errorMsg">
+      <div class="alert alert-danger" role="alert">
+        {{errorMsg}}
+      </div>
+  </div>
+</div>
+<nav class="navbar bg-cust mt-5 fixed-bottom">
+  <div class="navbar-expand m-auto navbar-text"></div>
+</nav>
