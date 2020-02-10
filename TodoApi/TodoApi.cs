@@ -19,7 +19,7 @@ namespace AzFunctionProxy
         public static async Task<IActionResult> CreateTodo(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "todo")] HttpRequest req,
             [Table("todosample", Connection = "AzureWebJobsStorage")] IAsyncCollector<TodoEntity> todoEntity,
-            [Blob("tobo-sample-container", FileAccess.Write, Connection = "AzureWebJobsStorage")] CloudBlobContainer cloudBlobContainer,
+            [Blob("todo-sample-container", FileAccess.Write, Connection = "AzureWebJobsStorage")] CloudBlobContainer cloudBlobContainer,
             ILogger log) {
 
             log.LogInformation("Add new todo in storage table");
