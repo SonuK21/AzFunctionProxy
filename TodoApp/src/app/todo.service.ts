@@ -9,7 +9,7 @@ import { Todo } from './todo/Todo';
 })
 
 export class TodoService {
-  baseApi = 'http://localhost:7071'; // 'https://az-fa-001.azurewebsites.net/api/todo'; //'http://localhost:7071';
+  baseApi = '';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
