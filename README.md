@@ -1,2 +1,3 @@
 # Azure Function Proxy
-Working with azure function proxies
+
+To understand azure function proxies please refer the article @ azure function proxies 
